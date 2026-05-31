@@ -688,7 +688,7 @@
       flex-wrap: wrap;
     }
 
-    .reveal {
+    .motion-ready .reveal {
       opacity: 0;
       transform: translateY(28px);
     }
@@ -798,7 +798,7 @@
         transition-duration: .001ms !important;
       }
 
-      .reveal {
+      .motion-ready .reveal {
         opacity: 1;
         transform: none;
       }
@@ -1011,6 +1011,8 @@
   </footer>
 
   <script type="module">
+    document.documentElement.classList.add("motion-ready");
+
     import { animate, inView, stagger, scroll } from "https://cdn.jsdelivr.net/npm/motion@12.23.24/+esm";
 
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -1040,6 +1042,13 @@
         animate(".hero-bg img", { transform: ["scale(1)", "scale(1.08)"] }),
         { target: document.querySelector(".hero"), offset: ["start start", "end start"] }
       );
+
+      window.setTimeout(() => {
+        document.querySelectorAll(".reveal").forEach((el) => {
+          el.style.opacity = "1";
+          el.style.transform = "none";
+        });
+      }, 1800);
     } else {
       document.querySelectorAll(".reveal").forEach((el) => {
         el.style.opacity = "1";
