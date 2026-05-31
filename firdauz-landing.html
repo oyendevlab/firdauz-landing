@@ -4,304 +4,546 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ahmad Firdauz Bin Abdullah Tahrin</title>
-  <meta name="description" content="Landing page profesional Ahmad Firdauz Bin Abdullah Tahrin, pemimpin pendidikan dan Ketua Program Pusat PERMATA Kurnia.">
+  <meta name="description" content="Landing page moden Ahmad Firdauz Bin Abdullah Tahrin, Ketua Program Bahagian PERMATA, Kementerian Pendidikan.">
+  <meta property="og:title" content="Ahmad Firdauz Bin Abdullah Tahrin">
+  <meta property="og:description" content="Profil pendidikan, kepimpinan dan rujukan Ahmad Firdauz Bin Abdullah Tahrin.">
+  <meta property="og:image" content="assets/firdauz/ahmad-firdauz-hero.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --ink: #102027;
-      --muted: #60717b;
-      --line: #dce7e8;
-      --paper: #f7faf8;
+      --void: #12002f;
+      --plum: #21004a;
+      --grape: #3b1477;
+      --teal: #49d2ca;
+      --aqua: #8ee3dc;
+      --magenta: #bf1b73;
+      --rose: #ec4f9d;
+      --mist: #d9f8f5;
       --white: #ffffff;
-      --teal: #04706f;
-      --blue: #0d3b66;
-      --gold: #c8922b;
-      --mint: #e5f4ef;
-      --shadow: 0 22px 70px rgba(16, 32, 39, .14);
+      --muted: rgba(255, 255, 255, .72);
+      --line: rgba(255, 255, 255, .14);
+      --glass: rgba(255, 255, 255, .08);
+      --shadow: 0 24px 90px rgba(7, 0, 28, .45);
     }
 
     * { box-sizing: border-box; }
 
+    html {
+      scroll-behavior: smooth;
+      background: var(--void);
+    }
+
     body {
       margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--ink);
-      background: var(--paper);
+      min-width: 320px;
+      color: var(--white);
+      background:
+        radial-gradient(circle at 8% 0%, rgba(73, 210, 202, .28), transparent 26rem),
+        radial-gradient(circle at 85% 18%, rgba(191, 27, 115, .2), transparent 28rem),
+        linear-gradient(180deg, #10002b 0%, #19013c 46%, #0f0226 100%);
+      font-family: Manrope, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       line-height: 1.6;
+      overflow-x: hidden;
     }
 
-    a { color: inherit; text-decoration: none; }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      opacity: .16;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+      background-size: 56px 56px;
+      mask-image: linear-gradient(180deg, #000, transparent 72%);
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      opacity: .12;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .skip-link {
+      position: fixed;
+      top: 12px;
+      left: 12px;
+      z-index: 100;
+      transform: translateY(-140%);
+      border-radius: 8px;
+      padding: 10px 14px;
+      background: var(--teal);
+      color: #07112a;
+      font-weight: 800;
+      transition: transform .2s ease;
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+      outline: 3px solid rgba(255,255,255,.75);
+      outline-offset: 3px;
+    }
 
     .shell {
-      width: min(1160px, calc(100% - 40px));
-      margin: 0 auto;
+      width: min(1180px, calc(100% - 40px));
+      margin-inline: auto;
     }
 
-    .topbar {
+    .site-header {
       position: sticky;
       top: 0;
-      z-index: 20;
-      background: rgba(247, 250, 248, .88);
-      backdrop-filter: blur(18px);
-      border-bottom: 1px solid rgba(220, 231, 232, .8);
+      z-index: 30;
+      border-bottom: 1px solid rgba(255,255,255,.1);
+      background: rgba(17, 0, 45, .76);
+      backdrop-filter: blur(20px);
     }
 
     .nav {
-      height: 72px;
+      min-height: 72px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 24px;
+      gap: 20px;
     }
 
     .brand {
-      display: flex;
+      display: inline-flex;
       align-items: center;
       gap: 12px;
-      font-weight: 800;
-      letter-spacing: 0;
-    }
-
-    .mark {
-      width: 40px;
-      height: 40px;
-      display: grid;
-      place-items: center;
-      border-radius: 8px;
-      background: var(--ink);
-      color: var(--white);
       font-weight: 900;
     }
 
-    .links {
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(73, 210, 202, .38);
+      border-radius: 10px;
+      background: linear-gradient(145deg, rgba(73, 210, 202, .28), rgba(191, 27, 115, .18));
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.18);
+      color: var(--mist);
+      font-family: "Barlow Condensed", Manrope, sans-serif;
+      font-size: 22px;
+      line-height: 1;
+    }
+
+    .nav-links {
       display: flex;
       align-items: center;
-      gap: 20px;
-      color: var(--muted);
+      gap: 22px;
+      color: rgba(255,255,255,.72);
       font-size: 14px;
-      font-weight: 650;
+      font-weight: 800;
+    }
+
+    .nav-links a {
+      transition: color .2s ease, transform .2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--teal);
+      transform: translateY(-1px);
     }
 
     .button {
+      min-height: 46px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 44px;
-      padding: 0 18px;
-      border-radius: 8px;
-      font-weight: 800;
+      gap: 10px;
       border: 1px solid transparent;
+      border-radius: 10px;
+      padding: 0 18px;
+      color: #10002b;
       background: var(--teal);
-      color: var(--white);
-      box-shadow: 0 10px 26px rgba(4, 112, 111, .24);
+      box-shadow: 0 14px 34px rgba(73, 210, 202, .22);
+      font-weight: 900;
+      cursor: pointer;
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease, background .22s ease;
+      touch-action: manipulation;
+    }
+
+    .button:hover,
+    .button:focus-visible {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 46px rgba(73, 210, 202, .34);
+    }
+
+    .button:active {
+      transform: translateY(0) scale(.98);
     }
 
     .button.secondary {
-      background: var(--white);
-      color: var(--ink);
-      border-color: var(--line);
+      color: var(--white);
+      background: rgba(255,255,255,.08);
+      border-color: rgba(255,255,255,.16);
       box-shadow: none;
     }
 
+    :focus-visible {
+      outline: 3px solid rgba(73, 210, 202, .85);
+      outline-offset: 4px;
+    }
+
     .hero {
-      padding: 76px 0 52px;
-      background:
-        linear-gradient(120deg, rgba(229, 244, 239, .95), rgba(247, 250, 248, .55)),
-        radial-gradient(circle at 88% 8%, rgba(200, 146, 43, .22), transparent 30%);
+      position: relative;
+      min-height: calc(100dvh - 72px);
+      display: grid;
+      align-items: stretch;
+      overflow: clip;
       border-bottom: 1px solid var(--line);
     }
 
-    .hero-grid {
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      filter: saturate(1.05) contrast(1.04);
+    }
+
+    .hero-bg::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(16, 0, 43, .96) 0%, rgba(16, 0, 43, .86) 34%, rgba(16, 0, 43, .28) 62%, rgba(16, 0, 43, .62) 100%),
+        linear-gradient(0deg, rgba(16, 0, 43, .96) 0%, transparent 34%);
+    }
+
+    .hero .shell {
+      position: relative;
+      z-index: 1;
       display: grid;
-      grid-template-columns: minmax(0, 1.08fr) minmax(320px, .72fr);
-      gap: 54px;
-      align-items: center;
+      grid-template-columns: minmax(0, .86fr) minmax(280px, .44fr);
+      gap: 38px;
+      align-items: end;
+      padding-block: 72px 48px;
+    }
+
+    .hero-copy {
+      max-width: 760px;
+      padding-top: 8vh;
     }
 
     .eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      margin-bottom: 18px;
+      gap: 12px;
+      margin: 0 0 18px;
       color: var(--teal);
-      font-weight: 850;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .11em;
       text-transform: uppercase;
-      font-size: 12px;
-      letter-spacing: .08em;
     }
 
     .eyebrow::before {
       content: "";
-      width: 34px;
-      height: 2px;
-      background: var(--gold);
+      width: 46px;
+      height: 3px;
+      background: var(--magenta);
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Barlow Condensed", Manrope, sans-serif;
+      letter-spacing: 0;
+      text-wrap: balance;
     }
 
     h1 {
+      max-width: 760px;
       margin: 0;
-      font-size: clamp(44px, 7vw, 82px);
-      line-height: .96;
-      letter-spacing: 0;
-      max-width: 820px;
+      font-size: clamp(62px, 10vw, 130px);
+      line-height: .82;
+      text-transform: uppercase;
     }
 
-    .lead {
+    h1 span {
+      display: block;
+      color: var(--teal);
+      text-shadow: 0 0 34px rgba(73, 210, 202, .18);
+    }
+
+    .hero-lead {
+      max-width: 610px;
       margin: 24px 0 0;
-      max-width: 680px;
-      color: #2c434c;
-      font-size: clamp(18px, 2vw, 22px);
+      color: rgba(255,255,255,.8);
+      font-size: clamp(17px, 2vw, 21px);
+      line-height: 1.65;
     }
 
-    .actions {
+    .hero-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-top: 34px;
+      margin-top: 32px;
     }
 
-    .profile-card {
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: var(--shadow);
+    .hero-panel {
+      align-self: end;
+      padding: 22px;
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 18px;
+      background: rgba(16, 0, 43, .52);
+      box-shadow: var(--shadow), inset 0 1px 0 rgba(255,255,255,.14);
+      backdrop-filter: blur(18px);
     }
 
-    .portrait {
-      min-height: 380px;
-      display: grid;
-      place-items: center;
-      background:
-        linear-gradient(150deg, rgba(13, 59, 102, .92), rgba(4, 112, 111, .82)),
-        url("https://malaysiateacherprize.org/wp-content/uploads/2024/05/MTP-Logo-1.png");
-      background-size: cover;
-      background-position: center;
-      color: var(--white);
-      text-align: center;
-      padding: 36px;
-    }
-
-    .initials {
-      width: 132px;
-      height: 132px;
-      display: grid;
-      place-items: center;
-      border-radius: 50%;
-      border: 2px solid rgba(255,255,255,.55);
-      background: rgba(255,255,255,.12);
-      font-size: 44px;
+    .hero-panel strong {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--mist);
+      font-size: 13px;
       font-weight: 900;
-      margin: 0 auto 20px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
     }
 
-    .profile-body {
-      padding: 24px;
-    }
-
-    .meta {
-      display: grid;
-      gap: 14px;
+    .hero-panel p {
       margin: 0;
+      color: rgba(255,255,255,.78);
+      font-size: 15px;
     }
 
-    .meta div {
+    .stats {
       display: grid;
-      gap: 2px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      margin-top: 28px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 16px;
+      background: rgba(255,255,255,.12);
     }
 
-    .meta dt {
-      color: var(--muted);
+    .stat {
+      min-height: 104px;
+      padding: 18px;
+      background: rgba(16, 0, 43, .72);
+    }
+
+    .stat b {
+      display: block;
+      color: var(--teal);
+      font-family: "Barlow Condensed", Manrope, sans-serif;
+      font-size: 32px;
+      line-height: 1;
+    }
+
+    .stat span {
+      display: block;
+      margin-top: 8px;
+      color: rgba(255,255,255,.68);
       font-size: 12px;
       font-weight: 800;
+      line-height: 1.4;
       text-transform: uppercase;
       letter-spacing: .08em;
     }
 
-    .meta dd {
-      margin: 0;
-      font-weight: 760;
-    }
-
-    section {
-      padding: 70px 0;
+    .section {
+      padding-block: 92px;
     }
 
     .section-head {
       display: grid;
-      grid-template-columns: minmax(0, .75fr) minmax(280px, .55fr);
-      gap: 28px;
+      grid-template-columns: minmax(0, .82fr) minmax(280px, .48fr);
+      gap: 30px;
       align-items: end;
-      margin-bottom: 32px;
+      margin-bottom: 34px;
     }
 
     h2 {
       margin: 0;
-      font-size: clamp(30px, 4vw, 48px);
-      line-height: 1.05;
-      letter-spacing: 0;
+      font-size: clamp(42px, 6vw, 72px);
+      line-height: .9;
+      text-transform: uppercase;
     }
 
     .section-head p {
       margin: 0;
       color: var(--muted);
       font-size: 17px;
+      line-height: 1.7;
     }
 
-    .grid-3 {
+    .profile-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .feature-card,
+    .role-card,
+    .timeline-card,
+    .resource-card {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.13);
+      border-radius: 18px;
+      background: linear-gradient(145deg, rgba(255,255,255,.1), rgba(255,255,255,.045));
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.12);
+    }
+
+    .feature-card {
+      min-height: 390px;
+      padding: 34px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .feature-card::after {
+      content: "";
+      position: absolute;
+      right: -80px;
+      bottom: -110px;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: rgba(191, 27, 115, .28);
+      filter: blur(8px);
+    }
+
+    .feature-card p {
+      position: relative;
+      z-index: 1;
+      max-width: 620px;
+      margin: 0;
+      color: rgba(255,255,255,.84);
+      font-size: clamp(22px, 3vw, 34px);
+      line-height: 1.25;
+      font-weight: 800;
+      text-wrap: balance;
+    }
+
+    .feature-meta {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 26px;
+    }
+
+    .tag {
+      border: 1px solid rgba(73, 210, 202, .32);
+      border-radius: 8px;
+      padding: 8px 10px;
+      color: var(--mist);
+      background: rgba(73, 210, 202, .08);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .role-stack {
+      display: grid;
+      gap: 18px;
+    }
+
+    .role-card {
+      padding: 24px;
+    }
+
+    .role-card small {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--teal);
+      font-weight: 900;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+    }
+
+    .role-card h3 {
+      margin: 0 0 8px;
+      font-size: 30px;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .role-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .method-strip {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 18px;
     }
 
-    .tile {
-      min-height: 230px;
-      padding: 26px;
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: 8px;
+    .method {
+      min-height: 270px;
+      padding: 28px;
+      border-radius: 18px;
+      background: rgba(12, 0, 32, .56);
+      border: 1px solid rgba(255,255,255,.12);
     }
 
-    .tile strong {
-      display: block;
-      margin-bottom: 10px;
-      font-size: 20px;
-      line-height: 1.2;
+    .method:nth-child(2) {
+      transform: translateY(34px);
     }
 
-    .tile p {
-      margin: 0;
-      color: var(--muted);
+    .method:nth-child(3) {
+      transform: translateY(68px);
+      background: linear-gradient(145deg, rgba(73, 210, 202, .16), rgba(191, 27, 115, .12));
     }
 
-    .number {
-      width: 42px;
-      height: 42px;
+    .method .num {
       display: grid;
       place-items: center;
-      margin-bottom: 22px;
-      border-radius: 8px;
-      background: var(--mint);
-      color: var(--teal);
+      width: 48px;
+      height: 48px;
+      margin-bottom: 48px;
+      border-radius: 12px;
+      color: #11002d;
+      background: var(--teal);
       font-weight: 900;
+      font-variant-numeric: tabular-nums;
     }
 
-    .story {
-      background: var(--ink);
-      color: var(--white);
+    .method h3 {
+      margin: 0 0 10px;
+      font-size: 32px;
+      line-height: 1;
+      text-transform: uppercase;
     }
 
-    .story .section-head p,
-    .story .tile p {
-      color: rgba(255,255,255,.72);
-    }
-
-    .story .tile {
-      background: rgba(255,255,255,.075);
-      border-color: rgba(255,255,255,.16);
-    }
-
-    .story .number {
-      background: rgba(200, 146, 43, .18);
-      color: #f5c567;
+    .method p {
+      margin: 0;
+      color: var(--muted);
     }
 
     .timeline {
@@ -309,94 +551,133 @@
       gap: 14px;
     }
 
-    .event {
+    .timeline-card {
       display: grid;
-      grid-template-columns: 140px 1fr;
-      gap: 24px;
-      padding: 24px;
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: 8px;
+      grid-template-columns: 150px 1fr;
+      gap: 26px;
+      padding: 26px;
+      background: rgba(255,255,255,.075);
     }
 
     .year {
       color: var(--teal);
+      font-family: "Barlow Condensed", Manrope, sans-serif;
+      font-size: 42px;
       font-weight: 900;
-      font-size: 22px;
+      line-height: .9;
     }
 
-    .event h3 {
+    .timeline-card h3 {
       margin: 0 0 8px;
-      font-size: 22px;
-      line-height: 1.25;
+      font-size: 34px;
+      line-height: 1;
+      text-transform: uppercase;
     }
 
-    .event p {
+    .timeline-card p {
+      max-width: 780px;
       margin: 0;
       color: var(--muted);
     }
 
-    .quote-band {
-      padding: 58px;
-      border-radius: 8px;
-      background: linear-gradient(135deg, var(--blue), var(--teal));
-      color: var(--white);
+    .quote-section {
+      padding-block: 56px 96px;
     }
 
-    .quote-band p {
-      max-width: 860px;
+    .quote-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 360px;
+      display: grid;
+      align-items: end;
+      border-radius: 22px;
+      padding: clamp(28px, 5vw, 60px);
+      background:
+        linear-gradient(125deg, rgba(73, 210, 202, .25), transparent 36%),
+        linear-gradient(145deg, rgba(191, 27, 115, .54), rgba(18, 0, 47, .92));
+      box-shadow: var(--shadow);
+    }
+
+    .quote-card::before {
+      content: "";
+      position: absolute;
+      right: -14%;
+      top: -48%;
+      width: 620px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      border: 74px solid rgba(255,255,255,.08);
+    }
+
+    .quote-card p {
+      position: relative;
+      z-index: 1;
+      max-width: 880px;
       margin: 0;
-      font-size: clamp(24px, 4vw, 40px);
-      line-height: 1.15;
-      font-weight: 850;
+      font-family: "Barlow Condensed", Manrope, sans-serif;
+      font-size: clamp(46px, 8vw, 96px);
+      font-weight: 900;
+      line-height: .86;
+      text-transform: uppercase;
+      text-wrap: balance;
     }
 
-    .quote-band span {
+    .quote-card span {
+      position: relative;
+      z-index: 1;
       display: block;
-      margin-top: 18px;
-      color: rgba(255,255,255,.75);
+      max-width: 680px;
+      margin-top: 22px;
+      color: rgba(255,255,255,.74);
       font-weight: 700;
     }
 
     .resources {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
     }
 
-    .resource {
-      padding: 24px;
-      border-radius: 8px;
-      background: var(--white);
-      border: 1px solid var(--line);
+    .resource-card {
+      min-height: 230px;
+      padding: 22px;
+      transition: transform .22s ease, border-color .22s ease, background .22s ease;
     }
 
-    .resource small {
+    .resource-card:hover,
+    .resource-card:focus-visible {
+      transform: translateY(-4px);
+      border-color: rgba(73, 210, 202, .46);
+      background: rgba(73, 210, 202, .1);
+    }
+
+    .resource-card small {
+      display: block;
+      margin-bottom: 12px;
+      color: var(--rose);
+      font-weight: 900;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .resource-card strong {
       display: block;
       margin-bottom: 10px;
-      color: var(--gold);
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: .08em;
-    }
-
-    .resource strong {
-      display: block;
       font-size: 20px;
       line-height: 1.25;
-      margin-bottom: 8px;
     }
 
-    .resource p {
+    .resource-card p {
       margin: 0;
       color: var(--muted);
+      font-size: 14px;
     }
 
     .footer {
-      padding: 42px 0;
-      background: var(--white);
-      border-top: 1px solid var(--line);
-      color: var(--muted);
+      border-top: 1px solid rgba(255,255,255,.12);
+      padding-block: 34px;
+      color: rgba(255,255,255,.62);
+      background: rgba(8, 0, 22, .72);
       font-size: 14px;
     }
 
@@ -407,206 +688,315 @@
       flex-wrap: wrap;
     }
 
-    @media (max-width: 880px) {
-      .links { display: none; }
-      .hero-grid,
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+    }
+
+    @media (max-width: 960px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-bg img {
+        object-position: 58% top;
+      }
+
+      .hero-bg::after {
+        background:
+          linear-gradient(180deg, rgba(16, 0, 43, .5) 0%, rgba(16, 0, 43, .88) 50%, rgba(16, 0, 43, .98) 100%),
+          linear-gradient(90deg, rgba(16, 0, 43, .82), rgba(16, 0, 43, .24));
+      }
+
+      .hero .shell,
       .section-head,
-      .grid-3,
+      .profile-grid,
+      .method-strip,
       .resources {
         grid-template-columns: 1fr;
       }
-      .hero { padding-top: 48px; }
-      .portrait { min-height: 300px; }
-      .event { grid-template-columns: 1fr; gap: 8px; }
-      .quote-band { padding: 34px 24px; }
+
+      .hero .shell {
+        padding-block: 360px 42px;
+      }
+
+      .hero-copy {
+        padding-top: 0;
+      }
+
+      .hero-panel {
+        max-width: 640px;
+      }
+
+      .method:nth-child(2),
+      .method:nth-child(3) {
+        transform: none;
+      }
+
+      .resources {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
-    @media (max-width: 520px) {
-      .shell { width: min(100% - 28px, 1160px); }
-      .brand span { display: none; }
-      .actions .button { width: 100%; }
-      .tile, .event, .resource { padding: 20px; }
+    @media (max-width: 640px) {
+      .shell {
+        width: min(100% - 28px, 1180px);
+      }
+
+      .brand span:last-child {
+        display: none;
+      }
+
+      .hero .shell {
+        padding-block: 315px 36px;
+      }
+
+      h1 {
+        font-size: clamp(52px, 18vw, 78px);
+      }
+
+      .hero-actions .button {
+        width: 100%;
+      }
+
+      .stats,
+      .resources {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding-block: 68px;
+      }
+
+      .feature-card {
+        min-height: 330px;
+        padding: 24px;
+      }
+
+      .timeline-card {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 22px;
+      }
+
+      .quote-section {
+        padding-block: 20px 70px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .001ms !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
     }
   </style>
 </head>
 <body>
-  <header class="topbar">
+  <a class="skip-link" href="#content">Langkau ke kandungan</a>
+
+  <header class="site-header">
     <nav class="shell nav" aria-label="Navigasi utama">
-      <a class="brand" href="#home">
-        <span class="mark">AF</span>
+      <a class="brand" href="#home" aria-label="Ahmad Firdauz">
+        <span class="brand-mark">AF</span>
         <span>Ahmad Firdauz</span>
       </a>
-      <div class="links">
+      <div class="nav-links">
         <a href="#profil">Profil</a>
         <a href="#kepimpinan">Kepimpinan</a>
         <a href="#pencapaian">Pencapaian</a>
         <a href="#sumber">Sumber</a>
       </div>
-      <a class="button secondary" href="https://sites.google.com/moe.gov.my/firdauzabdullah/home" target="_blank" rel="noopener">Laman Asal</a>
+      <a class="button secondary" href="https://sites.google.com/moe.gov.my/firdauzabdullah/home" target="_blank" rel="noopener">Laman asal</a>
     </nav>
   </header>
 
-  <main id="home">
-    <section class="hero">
-      <div class="shell hero-grid">
-        <div>
-          <span class="eyebrow">Pemimpin Pendidikan</span>
-          <h1>Ahmad Firdauz Bin Abdullah Tahrin</h1>
-          <p class="lead">Ketua Program Pusat PERMATA Kurnia dan tokoh pendidikan yang membawa budaya kerja “moving forward, moving together” dalam kepimpinan sekolah, komuniti dan pembangunan bakat guru.</p>
-          <div class="actions">
-            <a class="button" href="#profil">Lihat Profil</a>
-            <a class="button secondary" href="#sumber">Rujukan & Pautan</a>
+  <main id="content">
+    <section id="home" class="hero" aria-label="Hero Ahmad Firdauz">
+      <div class="hero-bg" aria-hidden="true">
+        <img src="assets/firdauz/ahmad-firdauz-hero.jpg" width="1280" height="727" alt="">
+      </div>
+      <div class="shell">
+        <div class="hero-copy">
+          <p class="eyebrow">Ketua Program, Bahagian PERMATA</p>
+          <h1>Ahmad Firdauz <span>Bin Abdullah Tahrin</span></h1>
+          <p class="hero-lead">Profil pendidikan yang memaparkan kepimpinan, pengalaman sekolah dan kerja pembangunan komuniti melalui pendekatan bergerak bersama pasukan.</p>
+          <div class="hero-actions">
+            <a class="button" href="#profil">Lihat profil</a>
+            <a class="button secondary" href="#sumber">Rujukan rasmi</a>
           </div>
         </div>
 
-        <aside class="profile-card" aria-label="Ringkasan profil">
-          <div class="portrait">
-            <div>
-              <div class="initials">AF</div>
-              <strong>“Sekolah bergerak bersama komuniti.”</strong>
+        <aside class="hero-panel" aria-label="Ringkasan peranan">
+          <strong>Peranan semasa</strong>
+          <p>Ketua Program (Program Harian), Bahagian PERMATA, Kementerian Pendidikan.</p>
+          <div class="stats" aria-label="Ringkasan kerjaya">
+            <div class="stat">
+              <b>01</b>
+              <span>PERMATA Kurnia</span>
             </div>
-          </div>
-          <div class="profile-body">
-            <dl class="meta">
-              <div>
-                <dt>Peranan Semasa</dt>
-                <dd>Head of Programme, PERMATA Kurnia Early Intervention Center of Excellence</dd>
-              </div>
-              <div>
-                <dt>Pengalaman</dt>
-                <dd>Bekas Guru Besar SK Pekan Nanas dan SK Jaya Mulia</dd>
-              </div>
-              <div>
-                <dt>Fokus</dt>
-                <dd>Kepimpinan pendidikan, komuniti, guru muda dan pembelajaran inklusif</dd>
-              </div>
-            </dl>
+            <div class="stat">
+              <b>02</b>
+              <span>Kepimpinan sekolah</span>
+            </div>
+            <div class="stat">
+              <b>03</b>
+              <span>Komuniti pendidikan</span>
+            </div>
           </div>
         </aside>
       </div>
     </section>
 
-    <section id="profil">
+    <section id="profil" class="section">
       <div class="shell">
-        <div class="section-head">
-          <h2>Profil ringkas yang lebih jelas dan mudah diimbas.</h2>
-          <p>Maklumat disusun semula daripada sumber awam berkaitan beliau supaya landing page ini terasa seperti profil rasmi, bukan salinan laman lama.</p>
+        <div class="section-head reveal">
+          <h2>Profil yang padat, jelas dan berkarakter.</h2>
+          <p>Halaman ini menyusun semula maklumat penting dalam bentuk landing page profesional dengan warna, imej dan ritma visual yang diambil daripada grafik asal.</p>
         </div>
 
-        <div class="grid-3">
-          <article class="tile">
-            <span class="number">01</span>
-            <strong>Ketua Program PERMATA Kurnia</strong>
-            <p>Menerajui program di pusat intervensi awal yang memberi fokus kepada pembangunan dan sokongan pendidikan khusus.</p>
+        <div class="profile-grid">
+          <article class="feature-card reveal">
+            <p>Daripada kepimpinan sekolah kepada pengurusan program, fokus beliau kekal pada pasukan, murid, ibu bapa dan komuniti pendidikan.</p>
+            <div class="feature-meta">
+              <span class="tag">Bahagian PERMATA</span>
+              <span class="tag">Kementerian Pendidikan</span>
+              <span class="tag">Kepimpinan pendidikan</span>
+            </div>
           </article>
-          <article class="tile">
-            <span class="number">02</span>
-            <strong>Kepimpinan sekolah</strong>
-            <p>Pernah berkhidmat sebagai Guru Besar SK Pekan Nanas, Pontian dan GPK Kokurikulum di SK Sungai Danga, Johor Bahru.</p>
+
+          <div class="role-stack">
+            <article class="role-card reveal">
+              <small>Peranan</small>
+              <h3>Ketua Program</h3>
+              <p>Memimpin program harian berkaitan PERMATA dan pembangunan intervensi awal.</p>
+            </article>
+            <article class="role-card reveal">
+              <small>Pengalaman</small>
+              <h3>Guru Besar</h3>
+              <p>Pernah menerajui SK Jaya Mulia dan SK Pekan Nanas, Pontian.</p>
+            </article>
+            <article class="role-card reveal">
+              <small>Pendekatan</small>
+              <h3>Moving together</h3>
+              <p>Mengangkat budaya kerja bersama, komunikasi jelas dan keputusan berasaskan konteks.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="kepimpinan" class="section">
+      <div class="shell">
+        <div class="section-head reveal">
+          <h2>Kaedah kerja yang mudah difahami dan boleh dilaksana.</h2>
+          <p>Bahagian ini direka sebagai naratif kepimpinan: lihat keadaan, fahami data dan gerakkan tindakan bersama.</p>
+        </div>
+
+        <div class="method-strip">
+          <article class="method reveal">
+            <span class="num">01</span>
+            <h3>Observe</h3>
+            <p>Memahami konteks sekolah, guru, murid dan komuniti sebelum menentukan intervensi.</p>
           </article>
-          <article class="tile">
-            <span class="number">03</span>
-            <strong>Budaya kerja bersama</strong>
-            <p>Menekankan prinsip tiada istilah “I”, tetapi “we” dalam menggerakkan sekolah, ibu bapa, komuniti dan pemegang taruh.</p>
+          <article class="method reveal">
+            <span class="num">02</span>
+            <h3>Analyse</h3>
+            <p>Menghubungkan dapatan, keperluan sebenar dan sumber yang ada untuk membuat keputusan praktikal.</p>
+          </article>
+          <article class="method reveal">
+            <span class="num">03</span>
+            <h3>Act</h3>
+            <p>Melaksanakan perubahan bersama warga pendidikan supaya impak dapat dirasai secara konsisten.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="kepimpinan" class="story">
+    <section id="pencapaian" class="section">
       <div class="shell">
-        <div class="section-head">
-          <h2>Pendekatan kepimpinan berasaskan manusia, komunikasi dan tindakan.</h2>
-          <p>Falsafah kerja beliau menekankan kepercayaan, komunikasi berkesan dan keupayaan untuk bergerak bersama pasukan.</p>
-        </div>
-        <div class="grid-3">
-          <article class="tile">
-            <span class="number">A</span>
-            <strong>Observe</strong>
-            <p>Memahami konteks sekolah, murid, guru, ibu bapa dan komuniti sebelum membuat keputusan.</p>
-          </article>
-          <article class="tile">
-            <span class="number">B</span>
-            <strong>Analyse</strong>
-            <p>Menghubungkan data, maklum balas dan cabaran setempat untuk mencari penyelesaian yang praktikal.</p>
-          </article>
-          <article class="tile">
-            <span class="number">C</span>
-            <strong>Act</strong>
-            <p>Melaksanakan inisiatif secara kolaboratif supaya perubahan dirasai oleh warga sekolah dan komuniti.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="pencapaian">
-      <div class="shell">
-        <div class="section-head">
-          <h2>Jejak kerjaya dan impak pendidikan.</h2>
-          <p>Susunan ini boleh dikembangkan lagi dengan gambar, sijil, program dan bahan daripada laman asal apabila semua aset tersedia.</p>
+        <div class="section-head reveal">
+          <h2>Jejak kepimpinan dan impak pendidikan.</h2>
+          <p>Timeline ini boleh dikembangkan dengan gambar program, sijil dan bahan asal apabila lebih banyak aset tersedia.</p>
         </div>
 
         <div class="timeline">
-          <article class="event">
+          <article class="timeline-card reveal">
             <div class="year">2015</div>
             <div>
-              <h3>Dilantik sebagai Guru Besar pada usia muda</h3>
-              <p>Menjadi Guru Besar SK Jaya Mulia, Pontian selepas menamatkan NPQEL dan dikenali kerana memecahkan stereotaip usia dalam kepimpinan sekolah.</p>
+              <h3>Guru Besar muda</h3>
+              <p>Dilantik sebagai Guru Besar SK Jaya Mulia, Pontian selepas menamatkan NPQEL dan dikenali melalui kisah kepimpinan muda dalam pendidikan.</p>
             </div>
           </article>
-          <article class="event">
+          <article class="timeline-card reveal">
             <div class="year">2019</div>
             <div>
-              <h3>Pencapaian UPSR terbaik</h3>
-              <p>Usaha penglibatan komuniti dan pemegang taruh dikaitkan dengan kejayaan sekolah memperoleh pencapaian UPSR terbaik pada tahun 2019.</p>
+              <h3>Pencapaian sekolah</h3>
+              <p>Penglibatan komuniti dan pemegang taruh dikaitkan dengan pencapaian UPSR terbaik sekolah pada tahun 2019.</p>
             </div>
           </article>
-          <article class="event">
+          <article class="timeline-card reveal">
             <div class="year">Kini</div>
             <div>
-              <h3>PERMATA Kurnia</h3>
-              <p>Berkhidmat sebagai Ketua Program di PERMATA Kurnia Early Intervention Center of Excellence.</p>
+              <h3>Bahagian PERMATA</h3>
+              <p>Berkhidmat sebagai Ketua Program (Program Harian), Bahagian PERMATA, Kementerian Pendidikan.</p>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section>
+    <section class="quote-section">
       <div class="shell">
-        <div class="quote-band">
-          <p>Moving forward, moving together.</p>
-          <span>Budaya kerja yang mengangkat kepimpinan bersama dan pembangunan pemimpin muda dalam kalangan guru.</span>
+        <div class="quote-card reveal">
+          <div>
+            <p>Moving forward, moving together.</p>
+            <span>Prinsip kepimpinan yang menolak kerja secara silo dan meletakkan kejayaan pendidikan sebagai usaha bersama.</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="sumber">
+    <section id="sumber" class="section">
       <div class="shell">
-        <div class="section-head">
-          <h2>Rujukan dan pautan berkaitan.</h2>
-          <p>Pautan ini boleh dijadikan sumber semakan kandungan sebelum versi akhir diterbitkan.</p>
+        <div class="section-head reveal">
+          <h2>Sumber dan pautan semakan.</h2>
+          <p>Pautan ini dikekalkan supaya kandungan boleh disemak semula terhadap sumber asal dan rujukan awam yang berkaitan.</p>
         </div>
+
         <div class="resources">
-          <a class="resource" href="https://sites.google.com/moe.gov.my/firdauzabdullah/home" target="_blank" rel="noopener">
+          <a class="resource-card reveal" href="https://sites.google.com/moe.gov.my/firdauzabdullah/home" target="_blank" rel="noopener">
             <small>Laman asal</small>
-            <strong>Google Sites Ahmad Firdauz Abdullah</strong>
+            <strong>Google Sites Ahmad Firdauz</strong>
             <p>Sumber utama yang diminta untuk refactor landing page ini.</p>
           </a>
-          <a class="resource" href="https://malaysiateacherprize.org/prize-committee/ahmad-firdauz-2/" target="_blank" rel="noopener">
+          <a class="resource-card reveal" href="https://malaysiateacherprize.org/prize-committee/ahmad-firdauz-2/" target="_blank" rel="noopener">
             <small>Profil awam</small>
             <strong>Malaysia Teacher Prize</strong>
-            <p>Profil ringkas beliau sebagai Head of Programme, PERMATA Kurnia.</p>
+            <p>Rujukan profil berkaitan peranan dan latar pendidikan.</p>
           </a>
-          <a class="resource" href="https://www.moe.gov.my/storage/files/shares/Dasar/PPPM/MEB%20Annual%20Report%202016.pdf" target="_blank" rel="noopener">
+          <a class="resource-card reveal" href="https://www.moe.gov.my/storage/files/shares/Dasar/PPPM/MEB%20Annual%20Report%202016.pdf" target="_blank" rel="noopener">
             <small>Laporan</small>
-            <strong>Malaysia Education Blueprint Annual Report 2016</strong>
-            <p>Memaparkan kisah pelantikan Guru Besar muda dan pendekatan kepimpinan beliau.</p>
+            <strong>Malaysia Education Blueprint 2016</strong>
+            <p>Rujukan kisah kepimpinan Guru Besar muda.</p>
           </a>
-          <a class="resource" href="https://www.cikguatiqah.com/2024/04/bicara-potensi-malaysia-teacher-prize.html" target="_blank" rel="noopener">
+          <a class="resource-card reveal" href="https://www.cikguatiqah.com/2024/04/bicara-potensi-malaysia-teacher-prize.html" target="_blank" rel="noopener">
             <small>Program</small>
-            <strong>Bicara Potensi Malaysia Teacher Prize 2024</strong>
-            <p>Rujukan penglibatan beliau dalam wacana pendidikan dan guru pempengaruh.</p>
+            <strong>Bicara Potensi MTP</strong>
+            <p>Rujukan penglibatan dalam wacana pendidikan.</p>
           </a>
         </div>
       </div>
@@ -615,9 +1005,47 @@
 
   <footer class="footer">
     <div class="shell">
-      <span>Landing page refactor untuk Ahmad Firdauz Bin Abdullah Tahrin.</span>
-      <span>Dibina sebagai fail HTML tunggal.</span>
+      <span>Ahmad Firdauz Bin Abdullah Tahrin</span>
+      <span>Landing page moden dengan animasi Motion.</span>
     </div>
   </footer>
+
+  <script type="module">
+    import { animate, inView, stagger, scroll } from "https://cdn.jsdelivr.net/npm/motion@12.23.24/+esm";
+
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (!reducedMotion) {
+      animate(
+        ".hero-copy > *",
+        { opacity: [0, 1], y: [30, 0], filter: ["blur(10px)", "blur(0px)"] },
+        { duration: 0.72, delay: stagger(0.08), easing: [0.22, 1, 0.36, 1] }
+      );
+
+      animate(
+        ".hero-panel",
+        { opacity: [0, 1], x: [38, 0], scale: [0.96, 1] },
+        { duration: 0.78, delay: 0.24, easing: [0.22, 1, 0.36, 1] }
+      );
+
+      inView(".reveal", ({ target }) => {
+        animate(
+          target,
+          { opacity: [0, 1], y: [28, 0] },
+          { duration: 0.58, easing: [0.22, 1, 0.36, 1] }
+        );
+      }, { margin: "0px 0px -12% 0px" });
+
+      scroll(
+        animate(".hero-bg img", { transform: ["scale(1)", "scale(1.08)"] }),
+        { target: document.querySelector(".hero"), offset: ["start start", "end start"] }
+      );
+    } else {
+      document.querySelectorAll(".reveal").forEach((el) => {
+        el.style.opacity = "1";
+        el.style.transform = "none";
+      });
+    }
+  </script>
 </body>
 </html>
